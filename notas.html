@@ -10,33 +10,37 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 
-<body class="d-flex">
-    <div class="container" id="interfazNotas">
-        <h1 class="text-center my-3">Mis Notas</h1>
-        <form class="container">
-            <h4>Nueva Nota</h4>
-            <div>
-                <input type="text" class="form-control" id="title" placeholder="Titulo" required>
-                <textarea class="form-control mt-2" id="description" name="description" rows="8" required></textarea>
-            </div>
-            <div class="mt-2">
-                <button type="submit" class="btn btn-primary">Guardar</button>
-                <button type="submit" class="btn btn-danger">Borrar</button>
-            </div>
-        </form>
+<body class="px-2">
+    <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-3" id="interfazNotas">
+            <h1 class="text-center my-3">Mis Notas</h1>
+            <form class="mb-4">
+                <h5>Nueva Nota</h5>
+                <div>
+                    <input type="text" class="form-control mb-2" id="title" placeholder="Titulo" required>
+                    <textarea class="form-control mb-2" id="description" name="description" rows="7"
+                        required></textarea>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary" id="btGuardar">Guardar</button>
+                    <button type="button" onclick="limpiarCampos()" class="btn btn-danger">Borrar</button>
+                </div>
+            </form>
 
-        <div class="mt-4">
-            <h5>Buscador</h5>
-            <input class="form-control" id="buscar" placeholder="Escribe para buscar...">
-            <div class="form-check my-2">
-                <input class="form-check-input" type="checkbox" id="realizada">
-                <label class="form-check-label" for="realizada">Realizadas</label>
+            <div>
+                <h5>Buscador</h5>
+                <input class="form-control mb-2" id="filterShear" placeholder="Escribe para buscar...">
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="filterCheck">
+                    <label class="form-check-label" for="realizada">Realizadas</label>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container my-3 mx-3">
-        <div id="notasCont" class="row"></div>
+        <div class="container col-sm-12 col-md-8 col-lg-9">
+            <div class="row mx-1 my-2" id="notasCont">
+            </div>
+        </div>
     </div>
 
     <script src="./notas.js"></script>
